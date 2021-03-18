@@ -1,7 +1,13 @@
-# class Array
+class Array
 
-#     def my_uniq(arr)
-    
-#     end
+    def my_uniq
+       new_arr = []
 
-# end
+       self.each do |ele|
+        new_arr << ele unless new_arr.include?(ele)
+       end
+       new_arr
+        # self.uniq
+    end
+
+end

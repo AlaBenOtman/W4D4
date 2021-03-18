@@ -5,7 +5,7 @@ describe Array do
   let(:array_2) { [] }
   let(:array_3) { [-1, 0, 2, -2, 1] }
   let(:array_4) { [[0, 1, 2], [3, 4, 5], [6, 7, 8]] }
-  let(:array_5) { [3000, 3200, 3400, 3000, 2800] }
+  let(:array_5) { [3000, 3200, 3400, 3000, 2800, 3300] }
 
 
   describe "#my_uniq" do
@@ -52,7 +52,7 @@ describe Array do
 
   describe "#stock_picker" do
     it "should return the most profitable pair of days" do
-      expect(array_5.stock_picker).to eq([0, 2])
+      expect(array_5.stock_picker).to eq([4, 5])
     end
   end
 

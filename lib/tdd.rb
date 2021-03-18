@@ -34,31 +34,25 @@ class Array
         
         # self.transpose
     end
-require 'byebug'
+
+    require 'byebug'
+
     def stock_picker
-        min = 0
+        new_arr = []
         max = 0
-        max_idx = 0
-        min_idx = 0
-        self.each_with_index do |price,i|
-            if price > max 
-                max = price 
-                max_idx = i 
+
+        (0...self.length).each do |i|
+            (i + 1...self.length).each do |j|
+                if -(self[i] - self[j]) > max
+                    new_arr = [i, j]
+                end
             end
         end
-        debugger
-        (0...self[max_idx]).each do |j|
-            if self[j] < min || min == 0
-                min = self[j]
-                min_idx = j 
-            end
-        end
-        [min_idx,max_idx]
+
+        new_arr
     end
 
 end
 
-# 7 days
-# amazon = [3000, 3200, 3400, 3000, 2800]
-# amazomn highest day = 3400
-# need to buy between [3000, 3200] 
+# 3000 - 3400 = -400
+# amazon = [3000, 3200, 3400, 3000, 2800, 3300]

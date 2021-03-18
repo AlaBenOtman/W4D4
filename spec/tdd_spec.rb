@@ -3,7 +3,7 @@ require 'tdd'
 describe Array do
   let(:array_1) { [1,1,2,3,3,3,4,5] }
   let(:array_2) { [] }
-  let(:array_3) { [-1, 0, 2, -2, -2] }
+  let(:array_3) { [-1, 0, 2, -2, 1] }
 
   describe "#my_uniq" do
       it "should deleted dups from array" do 
@@ -26,9 +26,12 @@ describe Array do
   describe "#two_sum" do
 
     it "should return pairs of positions that sum to zero" do
-      expect(array_3.two_sum).to eq([[2, 3]])
+      expect(array_3.two_sum).to eq([[0, 4], [2, 3]])
     end
-
+    it "should return smaller index first" do
+      arr = [[0, 4], [2, 3]]
+      expect(arr[0]).each {|a,b| a < b }
+    end
     
   end
 

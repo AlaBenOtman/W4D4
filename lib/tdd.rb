@@ -34,14 +34,26 @@ class Array
         
         # self.transpose
     end
-
+require 'byebug'
     def stock_picker
         min = 0
         max = 0
-
-        self.each_with_index do |price|
-            
+        max_idx = 0
+        min_idx = 0
+        self.each_with_index do |price,i|
+            if price > max 
+                max = price 
+                max_idx = i 
+            end
         end
+        debugger
+        (0...self[max_idx]).each do |j|
+            if self[j] < min || min == 0
+                min = self[j]
+                min_idx = j 
+            end
+        end
+        [min_idx,max_idx]
     end
 
 end

@@ -6,8 +6,9 @@ class Array
        self.each do |ele|
         new_arr << ele unless new_arr.include?(ele)
        end
-       new_arr
-        # self.uniq
+    #    new_arr
+    self
+        
     end
 
 end
